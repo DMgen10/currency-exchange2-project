@@ -17,7 +17,7 @@ public final class ConnectionManager {
             Class.forName("org.postgresql.Driver");
             try (InputStream inputStream = ConnectionManager.class.getClassLoader().getResourceAsStream(PROPERTIES_FILE)) {
                 if (inputStream == null){
-                    throw new RuntimeException("The PROPERTIES_FILE was not found in the resources");
+                    throw new RuntimeException("File " + PROPERTIES_FILE + " not found in the resources");
                 }
                 PROPERTIES.load(inputStream);
             }
